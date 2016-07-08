@@ -36,4 +36,13 @@ public class calcTest {
         assertThat(sum("1\n3,5"),is(9));
 
     }
+
+    @Test
+    public void commasAmdNewLineTest()throws Exception{
+        assertThat(sum("1\n5\n6\n7,8,2"),is(29));
+    }
+    @Test
+    public void customDelimiterTest()throws Exception{
+        assertThat(sum("//;\n1;4"),is(5));
+    }
 }
