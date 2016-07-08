@@ -50,4 +50,23 @@ public class calcTest {
         assertThat(sum("//;\n1;4,8,9"),is(22));
     }
 
+    @Test
+    public void exceptionTestWithSingleMinus() throws Exception {
+        Exception exception=null;
+        try{sum("-8,9,2");}
+        catch (Exception e){
+            exception=e;
+        }
+        assertThat(exception.getMessage(),is("negatives not allowed: -8"));
+    }
+
+    @Test
+    public void exceptionTestWithMultipleMinus() throws Exception {
+        Exception exception=null;
+        try{sum("-8,9,-2,-10");}
+        catch (Exception e){
+            exception=e;
+        }
+        assertThat(exception.getMessage(),is("negatives not allowed: -8 -2 -10"));
+    }
 }
