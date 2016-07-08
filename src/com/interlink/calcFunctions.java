@@ -12,8 +12,8 @@ public class calcFunctions {
     private static boolean isException;
 
     public static int sum(String input) {
-        exceptionMessage=DEFAULT_EXCEPTION_MESSAGE;
-        isException=false;
+        exceptionMessage = DEFAULT_EXCEPTION_MESSAGE;
+        isException = false;
         String delimiter = DEFAULT_DELIMITER;
         int result = 0;
         if (input.equals("")) return 0;
@@ -30,25 +30,26 @@ public class calcFunctions {
             result = 0;
             for (String s1 : input.split(delimiter)) {
                 checkForException(s1);
-                result += Integer.parseInt(s1);
+                if (Integer.parseInt(s1) <= 1000)
+                    result += Integer.parseInt(s1);
             }
         } else if (delimiter.equals(DEFAULT_DELIMITER))
             result = Integer.parseInt(input);
 
-        if (isException){
+        if (isException) {
             throw new RuntimeException(exceptionMessage);
         }
         return result;
     }
 
-    private static void checkForException(String input){
-        if (input.contains("-")){
-            exceptionMessage+=" "+input;
-            isException=true;
+    private static void checkForException(String input) {
+        if (input.contains("-")) {
+            exceptionMessage += " " + input;
+            isException = true;
         }
     }
 
-    private static void recoil(){
+    private static void recoil() {
 
     }
 
