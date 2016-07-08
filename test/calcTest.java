@@ -45,4 +45,9 @@ public class calcTest {
     public void customDelimiterTest()throws Exception{
         assertThat(sum("//;\n1;4"),is(5));
     }
+    @Test
+    public void customDelimiterTestWithAllDefaultDelimiters()throws Exception{
+        assertThat(sum("//;\n1;4,8,9"),is(22));
+    }
+
 }
