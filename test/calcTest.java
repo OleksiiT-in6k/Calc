@@ -30,4 +30,10 @@ public class calcTest {
         assertThat(sum("1,2,6,8,9"),is(26));
 
     }
+
+    @Test
+    public void newLineExceptOfComaTest() throws Exception {
+        assertThat(sum("1\n3,5"),is(9));
+
+    }
 }

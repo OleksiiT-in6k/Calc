@@ -8,10 +8,11 @@ public class calcFunctions {
     public static int sum(String input) {
         int result=0;
         if (input.equals(""))return 0;
-        if(input.contains(",")) {
+        if(input.contains(",")||input.contains("/n")) {
             result=0;
-            for (String s : input.split(","))
-                result+=Integer.parseInt(s);
+            for(String s1:input.split("\n"))
+            for (String s2 : s1.split(","))
+                result+=Integer.parseInt(s2);
         }
         else
         result=Integer.parseInt(input);
