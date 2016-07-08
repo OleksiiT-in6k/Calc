@@ -76,8 +76,13 @@ public class calcTest {
     }
 
     @Test
-    public void mumbersMoreThenThousandTest() throws Exception {
+    public void numbersMoreThenThousandTest() throws Exception {
         assertThat(sum("1010,2,5000\n4"), is(6));
 
+    }
+
+    @Test
+    public void name() throws Exception {
+        assertThat(sum("//!—!\n1!—!2!—!3"), is(6));
     }
 }
